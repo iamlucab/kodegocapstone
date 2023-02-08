@@ -1,10 +1,16 @@
 <?php
-  
+ 
 use Illuminate\Support\Facades\Route;
-  
+use App\Http\Controllers\Admin\ProfileController;
+use App\Http\Controllers\ContactController;
 use App\Http\Controllers\Auth\AuthController;
 use App\Http\Controllers\Auth\ForgotPasswordController;
-  
+use App\Http\Controllers\Auth\TestController;
+use Illuminate\Support\Facades\DB;
+use App\DonateController;
+use App\Http\Controllers\OrganizationController;
+
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -24,6 +30,15 @@ Route::get('/donate', function () {
     return view('donate');
 });
 
+
+
+// Route::get('/insert-user', [TestController::class, 'insertUser'])->name('insertUserData');
+Route::get('/edit-user/{id}', [AuthController::class, 'editUser'])->name('edit-user-form');
+Route::post('/edit-user-save', [AuthController::class, 'updateUser'])->name('edit-save-user');
+Route::get('/view-all-users', [AuthController::class, 'retrieveAllUsers'])->name('allUsers');
+Route::get('/view-profile/{id}', [AuthController::class, 'viewProfile'])->name('view-profile');
+ 
+
 Route::get('login', [AuthController::class, 'index'])->name('login');
 Route::post('post-login', [AuthController::class, 'postLogin'])->name('login.post'); 
 Route::get('registration', [AuthController::class, 'registration'])->name('register');
@@ -37,4 +52,16 @@ Route::post('forget-password', [ForgotPasswordController::class, 'submitForgetPa
 Route::get('reset-password/{token}', [ForgotPasswordController::class, 'showResetPasswordForm'])->name('reset.password.get');
 Route::post('reset-password', [ForgotPasswordController::class, 'submitResetPasswordForm'])->name('reset.password.post');
 
+
+Route::fallback(function () {
+return "<h1><center>Sorry, the page does not exists!</h1>";
+    });
+
+
+    Route::middleware(['auth'])->group(function () {
+    Route::get('profile',[ProfileController::class,'index'])->name('profile');
+    Route::post('profile/{user}',[ProfileController::class,'update'])->name('profile.update');
+});
+
+Route::resource('organization', OrganizationController::class);
 

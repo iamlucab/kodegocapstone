@@ -383,7 +383,7 @@ The Clear and Simple Answer <p></h1>
 					<span class="switch-selection"></span>
 			    </div>
 			    
-			    <div class="checkboxes">
+			    <!-- <div class="checkboxes">
 					<input type="checkbox" id="receipt" class="checkbox" />
 					<label for="receipt">Email Me A Receipt</label>
 					<br />
@@ -393,7 +393,7 @@ The Clear and Simple Answer <p></h1>
 					<input type="checkbox" id="list" class="checkbox" />
 					<label for="list">Add Me To Email List</label>
 			    </div>
-			    
+			     -->
 			    <div class="confirm">   
 				    
 			    </div>

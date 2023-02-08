@@ -46,14 +46,14 @@
                           @csrf
                             <div class="form-group">
                                 <div class="col-sm-12">
-                                    <input type="text" id="email_address" class="form-control" placeholder="Enter Email Address"  name="email" required autofocus>
+                                    <input type="text" id="email_address" class="form-control" placeholder="Enter Email Address"  name="email" required autofocus autocomplete="off">
                                   @if ($errors->has('email'))
                                       <span class="text-danger">{{ $errors->first('email') }}</span>
                                   @endif
                                 </div></div>
                                 <div class="form-group ">
                                     <div class="col-sm-12">
-                                    <input type="password" id="password" class="form-control" placeholder="Enter your password" name="password" required>
+                                    <input type="password" id="password" class="form-control" placeholder="Enter your password" name="password" required autocomplete="off">
                                   @if ($errors->has('password'))
                                       <span class="text-danger">{{ $errors->first('password') }}</span>
                                   @endif
