@@ -10,9 +10,9 @@ class OrganizationController extends Controller
     
     public function index()
     {
-        $data = Organization::latest()->paginate(5);
+        $data = Organization::latest()->paginate(15);
 
-        return view('index', compact('data'))->with('i', (request()->input('page', 1) - 1) * 5);
+        return view('index', compact('data'))->with('i', (request()->input('page', 1) - 1) * 15);
     }
 
   

@@ -1,4 +1,5 @@
 @extends('layout') 
+
   
 <!-- @section('content') -->
 <!-- <div class="container-fluid">
@@ -174,9 +175,9 @@
     ADMIN MENU
     </div>
                 <li class="nav-item">
-                <a class="nav-link" href="">
+                <a class="nav-link" href="/organization">
                     <i class="fas fa-fw fa-chart-area"></i>
-                    <span>Add Organization</span></a>
+                    <span>Organization List</span></a>
             </li> 
            
 
@@ -583,6 +584,7 @@
                         <!-- <div class="col-lg-6 mb-4 bg-primary"> Hello</div> <div class="col-lg-6 mb-4 bg-primary"> Hi There </div> -->
 
 <div class="container-fluid">
+    
     <hr>
 <p class="text-xs font-weight-bold text-info text-uppercase mb-6" >Top Featured Foundations</p>
  
