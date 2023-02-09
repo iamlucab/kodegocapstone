@@ -47,6 +47,9 @@ Route::post('post-login', [AuthController::class, 'postLogin'])->name('login.pos
 Route::get('registration', [AuthController::class, 'registration'])->name('register');
 Route::post('post-registration', [AuthController::class, 'postRegistration'])->name('register.post'); 
 Route::get('dashboard', [AuthController::class, 'dashboard']); 
+
+
+
 Route::get('logout', [AuthController::class, 'logout'])->name('logout');
 
 
@@ -83,3 +86,5 @@ Route::get('/admin/dashboard',function(){
 
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+
