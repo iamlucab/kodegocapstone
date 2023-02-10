@@ -3,7 +3,7 @@
 @section('content')
 
 <div class="card">
-	<div class="card-header">Edit Organization</div>
+	<div class="card-header"><span class="text-xs font-weight-bold text-primary text-uppercase mb-1">FOUNDATION INFORMATION</div>
 	<div class="card-body">
 		<form method="post" action="{{ route('organization.update', $organization->id) }}" enctype="multipart/form-data">
 			@csrf
@@ -48,11 +48,13 @@
 			</div>
 			<div class="text-center">
 				<input type="hidden" name="hidden_id" value="{{ $organization->id }}" />
-				<input type="submit" class="btn btn-primary" value="Edit" />
+				<input type="submit" class="btn btn-primary" value="Edit Information" />
 			</div>	
 		</form>
 	</div>
+	
 </div>
+@include('partials/footer')
 <script>
 document.getElementsByName('advocacy')[0].value = "{{ $organization->advocacy }}";
 </script>

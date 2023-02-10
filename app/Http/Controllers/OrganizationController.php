@@ -15,6 +15,15 @@ class OrganizationController extends Controller
         return view('index', compact('data'))->with('i', (request()->input('page', 1) - 1) * 15);
     }
 
+    public function dashboard()
+    {
+        $data = Organization::latest()->paginate(15);
+
+        return view('index', compact('data'))->with('i', (request()->input('page', 1) - 1) * 15);
+    }
+
+
+
   
     public function create()
     {

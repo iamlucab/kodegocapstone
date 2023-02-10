@@ -1,3 +1,26 @@
+@extends('layout') 
+  
+<!-- @section('content') -->
+<!-- <div class="container-fluid">
+    <div class="row justify-content-center">
+        <div class="col-md-8">
+            <div class="card">
+                <div class="card-header">{{ __('Dashboard') }}</div>
+  
+                <div class="card-body">
+                    @if (session('success'))
+                        <div class="alert alert-success" role="alert">
+                            {{ session('success') }}
+                        </div>
+                    @endif
+  
+                  
+                </div>
+            </div>
+        </div>
+    </div>
+</div> -->
+
 
 
 <!DOCTYPE html>
@@ -10,482 +33,501 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="">
     <meta name="author" content="">
-    <title>@yield('Capstone Project WD19P')</title>
-    
-    <!-- Custom fonts for this template-->
-   
-     <link
+    <link rel="shortcut icon" type="image/x-icon" href="https://cdn-icons-png.flaticon.com/128/1807/1807455.png" />
+    <title>CrowdFund Box</title>
+    <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+    <link
         href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
         rel="stylesheet">
-
-    <!-- Custom styles for this template-->
-    <style>
-        .img-logo {
-            width:350px;
-         }
-         .h1-class {
-            color:#52874f;
-            font-size:20px;
-            text-align: center;
-            border: 1px solid green;
-            background-color:#fbff8c;
-         }
- .donation-container {
-    display:flex;
-	height: auto;
-	font-family: 'Montserrat', sans-serif;
-	font-weight: 500;
-	font-size: 12px;
-	text-transform: uppercase;
-	margin-top: 30px;
-}
-
-.donation-box {
-	width: 530px;
-	height: 386px;
-	background-color: #F5F5F5;
-	border-top-left-radius: 4px;
-	border-top-right-radius: 4px;
-	position: relative;
-	margin-left: auto;
-	margin-right: auto;
-	
-	-webkit-transition: all 0.15s ease-out;
-	-moz-transition: all 0.15s ease-out;
-	-o-transition: all 0.15s ease-out;
-	transition: all 0.15s ease-out;
-}
-
-.donation-box .title {
-	background-color: #C1D82F;
-	width: 100%;
-	border-top-left-radius: 4px;
-	border-top-right-radius: 4px;
-	color: white;
-	text-align: center;
-	padding-top: 12px;
-	padding-bottom: 12px;
-	font-size: 15px;
-}
-
-.donation-box .donate-button {
-	background-color: #C1D82F;
-	width: 100%;
-	color: white;
-	text-align: center;
-	padding-top: 12px;
-	padding-bottom: 12px;
-	font-size: 18px;
-	bottom: 0px;
-	position: absolute;
-	cursor: pointer;
-	font-weight: 800;
-}
-
-.donation-box .fields {
-	width: 59%;
-	display: block;
-	position: absolute;
-	top: 60px;
-	left: 15px;
-}
-
-.donation-box .fields input {
-	width: 90%;
-	font-size: 17px;
-	padding: 10px;
-	border-radius: 4px;
-	border-width: 0px;
-	color: #5C5C5C;
-	font-family: 'Montserrat', sans-serif;
-	font-weight: 400;
-	margin-bottom: 10px;
-	-webkit-font-smoothing: antialiased;
-}
-
-::-webkit-input-placeholder {
-   color: #cdcdcd;
-   font-size: 15px;
-}
-
-:-moz-placeholder { /* Firefox 18- */
-   color: #cdcdcd;
-   font-size: 15px;
-}
-
-::-moz-placeholder {  /* Firefox 19+ */
-   color: #cdcdcd;
-   font-size: 15px; 
-}
-
-:-ms-input-placeholder {  
-   color: #cdcdcd;
-   font-size: 15px;
-}
-
-.donation-box .amount {
-	width: 30%;
-	display: block;
-	position: absolute;
-	top: 60px;
-	right: 15px;
-}
-
-.donation-box .amount .button {
-	width: 100%;
-	background-color: gray;
-	margin-bottom: 10px;
-	text-align: center;
-	color: white;
-	padding: 15px 0px 15px 0px;
-	border-radius: 4px;
-	font-size: 20px;
-	cursor: pointer;
-	
-	-webkit-transition: 400ms background-color;
-	-moz-transition: 800ms opacity, 800ms right;
-	-ms-transition: 800ms opacity, 800ms right;
-	-o-transition: 800ms opacity, 800ms right;
-	transition: 200ms background-color;
-}
-
-.donation-box .amount .button:hover {
-	background-color: #393939;
-}
-
-.donation-box .amount .button.selected {
-	background-color: #393939;
-}
-
-.donation-box .amount .button input {
-	min-width: 34px;
-	font-size: 20px;
-	font-weight: 500;
-	border: none;
-	background-color: transparent;
-	color: white;
-	font-family: Montserrat, sans-serif;
-	font-size: 20px;
-	font-stretch: normal;
-	font-style: normal;
-	font-variant: normal;
-	font-weight: 500;
-	border-bottom: 2px dashed white;
-	-webkit-font-smoothing: antialiased;
-	
-	-webkit-transition: all 0.15s ease-out;
-	-moz-transition: all 0.15s ease-out;
-	-o-transition: all 0.15s ease-out;
-	transition: all 0.15s ease-out;
-}
-
-.set-amount {
-	max-width: 96px;
-}
-
-.switch {
-  position: absolute;
-  top: 190px;
-  left: 15px;
-  margin: 20px auto;
-  height: 26px;
-  width: 58.5%;
-  background: white;
-  border-radius: 3px;
-}
-
-.switch-label {
-  position: relative;
-  z-index: 2;
-  float: left;
-  width: 49%;
-  line-height: 26px;
-  font-size: 11px;
-  color: #5C5C5C;
-  text-align: center;
-  cursor: pointer;
-  font-weight: bold;
-}
-.switch-label:active {
-  font-weight: bold;
-}
-
-.switch-label-off {
-  padding-left: 2px;
-}
-
-.switch-label-on {
-  padding-right: 2px;
-}
-
-.switch-input {
-  display: none;
-}
-.switch-input:checked + .switch-label {
-  font-weight: bold;
-  color: rgba(0, 0, 0, 0.65);
-  
-  -webkit-transition: 0.15s ease-out;
-  -moz-transition: 0.15s ease-out;
-  -o-transition: 0.15s ease-out;
-  transition: 0.15s ease-out;
-}
-.switch-input:checked + .switch-label-on ~ .switch-selection {
-  left: 114px;
-}
-
-.switch-selection {
-  display: block;
-  position: absolute;
-  z-index: 1;
-  top: 2px;
-  left: 2px;
-  width: 49%;
-  height: 22px;
-  background: #65bd63;
-  border-radius: 3px;
-  background-color: #C1D82F;
-  
-  -webkit-transition: left 0.15s ease-out;
-  -moz-transition: left 0.15s ease-out;
-  -o-transition: left 0.15s ease-out;
-  transition: left 0.15s ease-out;
-}
-
-.checkboxes {
-	position: absolute;
-	top: 242px;
-	left: 13px;
-}
-
-.checkboxes label {
-	position: relative;
-	top: -8px;
-	font-size: 13px;
-	color: gray;
-}
-
-.checkbox {
-	-webkit-appearance: none;
-	background-color: #fafafa;
-	border: 3px solid #C1D82F;
-	padding: 9px;
-	border-radius: 3px;
-	display: inline-block;
-	position: relative;
-	
-	-webkit-transition: all 0.15s ease-out;
-	-moz-transition: all 0.15s ease-out;
-	-o-transition: all 0.15s ease-out;
-	transition: all 0.15s ease-out;
-}
-
-.checkbox:active, .checkbox:checked:active {
-	
-}
-
-.checkbox:checked {
-	background-color: #C1D82F;
-	border: 1px solid #C1D82F;
-	color: white;
-}
-
-.checkbox:checked:after {
-	content: '\2714';
-	font-size: 14px;
-	position: absolute;
-	top: 0px;
-	left: 3px;
-	color: white;
-}
-
-.confirm {
-	display: none;
-	position: absolute;
-	top: 335px;
-	left: 15px;
-	right: 15px;
-	font-size: 16px;
-	
-	-webkit-transition: all 0.15s ease-out;
-	-moz-transition: all 0.15s ease-out;
-	-o-transition: all 0.15s ease-out;
-	transition: all 0.15s ease-out;
-}
-
-.confirm i {
-	font-weight: bold;
-	text-decoration: underline;
-	font-style: normal;
-}
-    
-    </style>
-    <link rel="stylesheet" type="text/css" href="{{ asset('/css/cap-user.css') }}">
-    <head>
-  <link href='https://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>
-        <link href='https://fonts.googleapis.com/css?family=Droid+Serif:400,700,700italic,400italic' rel='stylesheet' type='text/css'>
-</head>
-
-<!-- <body class="bg-gradient-primary"> -->
-
-<div class="container-fluid">
-
-    <!-- Outer Row -->
-    <div class="row justify-content-center">
- 
-        <div class="col-xl-10 col-lg-12 col-md-9">
-
-            <div class="card o-hidden border-0 shadow-lg my-5">
-                <div class="card-body p-0">
+        <link rel="stylesheet" type="text/css" href="{{ asset('/css/cap-user.css') }}">
         
-                    <!-- Nested Row within Card Body -->
-                    <div class="row">
-                        <div class="col-lg-6 d-none d-lg-block bg-login-image"></div>
-                        <div class="col-lg-6">
-                            <div class="p-2">
-                        
-                                <div class="text-center">
-                                <img class="img-logo" src="/img/logo.png" />
-                                @include("partials.navbar")
-                                </div>
-                               <h1 class="h1-class"> <p><br>What is Crowdfunding? <br>
-The Clear and Simple Answer <p></h1>
-                                <div class="row">
-  
-                                <hr>
-                                <div class="card mb-3" style="max-width: 540px;">
-  <div class="row g-0">
+    <!-- <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">-->
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+
+<body id="page-top">
+    <!-- Page Wrapper -->
+    <div id="wrapper">
+
+    <?PHP 
 
 
-<div class="donation-container">
-            
-            <div class="donation-box">
-	            <div class="title">Donation Information</div>
-	            
-	            <div class="fields">
-		            <input type="text" id="firstName" placeholder="First Name"> </input>
-		            <input type="text" id="lastName" placeholder="Last Name"> </input>
-		            <input type="text" id="email" placeholder="Email"> </input>
-	            </div>
-	            
-	            <div class="amount">
-		            <div class="button">P100</div>
-		            <div class="button">P500</div>
-		            <div class="button">P1000</div>
-		            <div class="button">P<input type="text" class="set-amount" placeholder=""> </input></div>
-	            </div>
-	            
-	            <div class="switch">
-					<input type="radio" class="switch-input" name="view" value="One-Time" id="one-time" checked="">
-					<label for="one-time" class="switch-label switch-label-off">One-Time</label>
-					<input type="radio" class="switch-input" name="view" value="Monthly" id="monthly">
-					<label for="monthly" class="switch-label switch-label-on">Monthly</label>
-					<span class="switch-selection"></span>
-			    </div>
-			    
-			    <!-- <div class="checkboxes">
-					<input type="checkbox" id="receipt" class="checkbox" />
-					<label for="receipt">Email Me A Receipt</label>
-					<br />
-					<input type="checkbox" id="anon" class="checkbox" />
-					<label for="anon">Give Anonymously</label>
-					<br />
-					<input type="checkbox" id="list" class="checkbox" />
-					<label for="list">Add Me To Email List</label>
-			    </div>
-			     -->
-			    <div class="confirm">   
-				    
-			    </div>
-	            
-	            <div class="donate-button"><i class="fa fa-credit-card"></i> Donate Now</div>
-            </div>
-            
-        </div>
+?>
+        <!-- Sidebar -->
+        <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
+            <a class="sidebar-brand d-flex align-items-center justify-content-center" href="/dashboard">
+                <div class="sidebar-brand-icon rotate-n-15">
+                    <i class="fas fa-laugh-wink"></i>
+                </div>
+                <div class="sidebar-brand-text mx-3"> <br> CROWDFUND BOX</div>
+            </a>
 
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
-<script src="https://raw.githubusercontent.com/jerryluk/jquery.autogrow/master/jquery.autogrow-min.js"></script>
-</body>
+       
+            <hr class="sidebar-divider my-0">
 
 
+            <li class="nav-item active">
+                <a class="nav-link" href="/dashboard">
+                    <i class="fas fa-fw fa-tachometer-alt"></i>
+                    <span>Dashboard</span></a>
+                
+            </li>
+    
+ <!-- Divider -->
+ <hr class="sidebar-divider">
 
-      </div>
+<!-- Heading -->
+
+    
+   <div class="sidebar-heading">
+    ADMIN MENU
     </div>
-  </div>
-</div>
-                                </div>
-                            </div>
-                          
-                        </div>
-                    </div>
-                <!-- </div>  @include("partials.footer") -->
-            </div>
-
-        </div>
-
-    </div>
-
-</div>
-
+                <li class="nav-item">
+                <a class="nav-link" href="">
+                    <i class="fas fa-fw fa-chart-area"></i>
+                    <span>Add Organization</span></a>
+            </li> 
            
 
+            <!-- Divider -->
+            <hr class="sidebar-divider">
+
+            <!-- Heading -->
+            <div class="sidebar-heading">
+                FEATURED MENU
+            </div>
+        
+
+                    
+            <!-- Nav Item - Pages Collapse Menu -->
+            <li class="nav-item">
+                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo"
+                    aria-expanded="true" aria-controls="collapseTwo">
+                    <i class="fas fa-fw fa-cog"></i>
+                    <span>Other Payment</span>
+                </a>
+                <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
+                    <div class="bg-white py-2 collapse-inner rounded">
+                        <h6 class="collapse-header">Categories</h6>
+                        <a class="collapse-item" href="#">How it Works</a>
+                        <a class="collapse-item" href="#">See all Campaigns</a>
+              
+                    </div>
+                </div>
+                </li>
+                 <!-- Nav Item - Utilities Collapse Menu -->
+            <li class="nav-item">
+                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseUtilities"
+                    aria-expanded="true" aria-controls="collapseUtilities">
+                    <i class="fas fa-fw fa-wrench"></i>
+                    <span>Start a Campaign</span>
+                </a>
+                <div id="collapseUtilities" class="collapse" aria-labelledby="headingUtilities"
+                    data-parent="#accordionSidebar">
+                    <div class="bg-white py-2 collapse-inner rounded">
+                        <h6 class="collapse-header">Main</h6>
+                        <a class="collapse-item" href="">Register</a>
+                        <a class="collapse-item" href="">Login</a>
+                        <a class="collapse-item" href="">Forget Password</a>
+                        <a class="collapse-item" href="">Other</a>
+                        <a class="collapse-item" href="">Chart</a>
+                    </div>
+                </div>
+            </li>
+
+
+           
+       
+        <hr class="sidebar-divider d-none d-md-block">
+        <div class="text-center d-none d-md-inline">
+        <button class="rounded-circle border-0" id="sidebarToggle"></button>
+            </div>
+        </ul>
+        <!-- End of Sidebar -->
+
+        <!-- Content Wrapper -->
+        <div id="content-wrapper" class="d-flex flex-column">
+
+            <!-- Main Content -->
+            <div id="content">
+
+                <!-- Topbar -->
+                <nav class="navbar navbar-expand navbar-light bg-white topbar mb-4 static-top shadow">
+
+                    <!-- Sidebar Toggle (Topbar) -->
+                    <button id="sidebarToggleTop" class="btn btn-link d-md-none rounded-circle mr-3">
+                        <i class="fa fa-bars"></i>
+                    </button>
+
+
+                    <!-- Topbar Search -->
+                    <form
+                        class="d-none d-sm-inline-block form-inline mr-auto ml-md-3 my-2 my-md-0 mw-100 navbar-search">
+                        <div class="input-group">
+                            <input type="text" class="form-control bg-light border-0 small" placeholder="Search for..."
+                                aria-label="Search" aria-describedby="basic-addon2">
+                            <div class="input-group-append">
+                                <button class="btn btn-primary" type="button">
+                                    <i class="fas fa-search fa-sm"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </form>
+
+                    <!-- Topbar Navbar -->
+                    <ul class="navbar-nav ml-auto">
+
+                        <!-- Nav Item - Search Dropdown (Visible Only XS) -->
+                        <li class="nav-item dropdown no-arrow d-sm-none">
+                            <a class="nav-link dropdown-toggle" href="#" id="searchDropdown" role="button"
+                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                <i class="fas fa-search fa-fw"></i>
+                            </a>
+                            <!-- Dropdown - Messages -->
+                            <div class="dropdown-menu dropdown-menu-right p-3 shadow animated--grow-in"
+                                aria-labelledby="searchDropdown">
+                                <form class="form-inline mr-auto w-100 navbar-search">
+                                    <div class="input-group">
+                                        <input type="text" class="form-control bg-light border-0 small"
+                                            placeholder="Search for..." aria-label="Search"
+                                            aria-describedby="basic-addon2">
+                                        <div class="input-group-append">
+                                            <button class="btn btn-primary" type="button">
+                                                <i class="fas fa-search fa-sm"></i>
+                                            </button>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                        </li>
+
+                        <!-- Nav Item - Alerts -->
+                        <li class="nav-item dropdown no-arrow mx-1">
+                            <a class="nav-link dropdown-toggle" href="#" id="alertsDropdown" role="button"
+                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                <i class="fas fa-bell fa-fw"></i>
+                                <!-- Counter - Alerts -->
+                                <span class="badge badge-danger badge-counter">3+</span>
+                            </a>
+                            <!-- Dropdown - Alerts -->
+                            <div class="dropdown-list dropdown-menu dropdown-menu-right shadow animated--grow-in"
+                                aria-labelledby="alertsDropdown">
+                                <h6 class="dropdown-header">
+                                    Alerts Center
+                                </h6>
+                                <a class="dropdown-item d-flex align-items-center" href="#">
+                                    <div class="mr-3">
+                                        <div class="icon-circle bg-primary">
+                                            <i class="fas fa-file-alt text-white"></i>
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <div class="small text-gray-500">December 12, 2019</div>
+                                        <span class="font-weight-bold">A new monthly report is ready to download!</span>
+                                    </div>
+                                </a>
+                                <a class="dropdown-item d-flex align-items-center" href="#">
+                                    <div class="mr-3">
+                                        <div class="icon-circle bg-success">
+                                            <i class="fas fa-donate text-white"></i>
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <div class="small text-gray-500">December 7, 2019</div>
+                                        $290.29 has been deposited into your account!
+                                    </div>
+                                </a>
+                                <a class="dropdown-item d-flex align-items-center" href="#">
+                                    <div class="mr-3">
+                                        <div class="icon-circle bg-warning">
+                                            <i class="fas fa-exclamation-triangle text-white"></i>
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <div class="small text-gray-500">December 2, 2019</div>
+                                        Spending Alert: We've noticed unusually high spending for your account.
+                                    </div>
+                                </a>
+                                <a class="dropdown-item text-center small text-gray-500" href="#">Show All Alerts</a>
+                            </div>
+                        </li>
+
+                        <!-- Nav Item - Messages -->
+                        <li class="nav-item dropdown no-arrow mx-1">
+                            <a class="nav-link dropdown-toggle" href="#" id="messagesDropdown" role="button"
+                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                <i class="fas fa-envelope fa-fw"></i>
+                                <!-- Counter - Messages -->
+                                <span class="badge badge-danger badge-counter">7</span>
+                            </a>
+                            <!-- Dropdown - Messages -->
+                            <div class="dropdown-list dropdown-menu dropdown-menu-right shadow animated--grow-in"
+                                aria-labelledby="messagesDropdown">
+                                <h6 class="dropdown-header">
+                                    Message Center
+                                </h6>
+                                <a class="dropdown-item d-flex align-items-center" href="#">
+                                    <div class="dropdown-list-image mr-3">
+                                        <img class="rounded-circle" src="img/undraw_profile_1.svg"
+                                            alt="...">
+                                        <div class="status-indicator bg-success"></div>
+                                    </div>
+                                    <div class="font-weight-bold">
+                                        <div class="text-truncate">Hi there! I am wondering if you can help me with a
+                                            problem I've been having.</div>
+                                        <div class="small text-gray-500">Emily Fowler · 58m</div>
+                                    </div>
+                                </a>
+                                <a class="dropdown-item d-flex align-items-center" href="#">
+                                    <div class="dropdown-list-image mr-3">
+                                        <img class="rounded-circle" src="img/undraw_profile_2.svg"
+                                            alt="...">
+                                        <div class="status-indicator"></div>
+                                    </div>
+                                    <div>
+                                        <div class="text-truncate">I have the photos that you ordered last month, how
+                                            would you like them sent to you?</div>
+                                        <div class="small text-gray-500">Jae Chun · 1d</div>
+                                    </div>
+                                </a>
+                                <a class="dropdown-item d-flex align-items-center" href="#">
+                                    <div class="dropdown-list-image mr-3">
+                                        <img class="rounded-circle" src="img/undraw_profile_3.svg"
+                                            alt="...">
+                                        <div class="status-indicator bg-warning"></div>
+                                    </div>
+                                    <div>
+                                        <div class="text-truncate">Last month's report looks great, I am very happy with
+                                            the progress so far, keep up the good work!</div>
+                                        <div class="small text-gray-500">Morgan Alvarez · 2d</div>
+                                    </div>
+                                </a>
+                                <a class="dropdown-item d-flex align-items-center" href="#">
+                                    <div class="dropdown-list-image mr-3">
+                                        <img class="rounded-circle" src="https://source.unsplash.com/Mv9hjnEUHR4/60x60"
+                                            alt="...">
+                                        <div class="status-indicator bg-success"></div>
+                                    </div>
+                                    <div>
+                                        <div class="text-truncate">Am I a good boy? The reason I ask is because someone
+                                            told me that people say this to all dogs, even if they aren't good...</div>
+                                        <div class="small text-gray-500">Chicken the Dog · 2w</div>
+                                    </div>
+                                </a>
+                                <a class="dropdown-item text-center small text-gray-500" href="#">Read More Messages</a>
+                            </div>
+                        </li>
+
+                        <div class="topbar-divider d-none d-sm-block"></div>
+
+                        <!-- Nav Item - User Information -->
+                        <li class="nav-item dropdown no-arrow">
+                            <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button"
+                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                <span class="mr-2 d-none d-lg-inline text-gray-600 small">Hey, @auth {{auth()->user()->name}}  {{auth()->user()->lastname}}  @endauth
+
+                                </span>
+                                <img class="img-profile rounded-circle"
+                                    src="img/undraw_profile.svg">
+                            </a>
+                            <!-- Dropdown - User Information -->
+                            <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in"
+                                aria-labelledby="userDropdown">
+                                <a class="dropdown-item" href="/profile">
+                                    <i class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i>
+                                    Profile
+                                </a>
+                                <a class="dropdown-item" href="/edit-user/{{auth()->user()->id}}">
+                                    <i class="fas fa-cogs fa-sm fa-fw mr-2 text-gray-400"></i>
+                                    Settings
+                                </a>
+                                <a class="dropdown-item" href="#">
+                                    <i class="fas fa-list fa-sm fa-fw mr-2 text-gray-400"></i>
+                                    Donations you've Made
+                                </a>
+                                <div class="dropdown-divider"></div>
+                                <a class="dropdown-item" href="/logout" data-toggle="modal" data-target="#logoutModal">
+                                    <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
+                                    Logout
+                                </a>
+                            </div>
+                        </li>
+
+                    </ul>
+
+                </nav>
+                <!-- End of Topbar -->
+                
+
+            
+                <div class="container rounded bg-white mt-5 mb-5">
+    <div class="row">
+        <div class="col-md-3 border-right">
+            <div class="d-flex flex-column align-items-center text-center p-3 py-5"><img class="img-fluid" alt="Responsive image" width="300px" src="https://media.istockphoto.com/id/1256555401/vector/blood-donation-concept.jpg?s=612x612&w=0&k=20&c=OKESllI31Ny0H4CTABQgayI230R2o4tvCEE8RkSULpI=">
+			<span class="text-xs font-weight-bold text-primary text-uppercase mb-1">
+			 Photo  of the Foundation<br> NAME AND INFORMATION</span></div>
+        </div>
+        <div class="col-md-5 border-right">
+            <div class="p-3 py-5">
+                <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">
+				YOU ARE ABOUT TO DONATE TO (name of the foundation)
+                </div>
+                <div class="row mt-2">
+                    <div class="col-md-12"><label class="labels">Name</label><input type="text" class="form-control" placeholder="{{ auth()->user()->name }} {{ auth()->user()->lastname }}" readonly></div>
+                    
+                </div>
+                <div class="row mt-3">
+                    <div class="col-md-6"><label class="labels">Amount</label><input type="text" class="form-control" placeholder="P"></div>
+                 
+                </div>
+				<div class="row mt-3">	
+				<select class="form-control">
+				<option selected>Donate from</option>
+				<option value="1">Wallet</option>
+				<option value="2">Paypal</option>
+				<option value="3">Credit Card</option>
+</select>
+
 </div>
-<script>
-    var firstName = "";
-		var lastName = "";
-		var email = "";
-		var dType = "";
-		var receipt = "";
-		var anon = "";
-		var list = "";
-		var amount = "";
-		
-		$('.set-amount').autoGrow(0);
-		
-		/*
-			if(isiPad || jQuery.browser.mobile){
-				$('#team').hide()
-				$('.team-mobile').show();	
-			}else{
-				$('#team').show()
-				$('.team-mobile').hide();
-			}
-		*/
-		
-		//Set & Highlight Donation Amount
-		$(".button").click(function(){
-			$(".button").removeClass("selected");
-			$(this).addClass("selected");
-			
-			$(this).find("input").focus();
-		});
-		
-		//Grow the donation box if they type more than 4 numbers
-		$(".set-amount").keyup(function(){
-			
-			if (this.value != this.value.replace(/[^0-9\.]/g, '')) {
-		       this.value = this.value.replace(/[^0-9\.]/g, '');
-		    }
 
-		});
-		
-		
-		$("input").on("change", function(){
-			// $(".donation-box").css("height", "500px");
-			
-			firstName = $("#firstName").val();
-			lastName = $("#lastName").val();
-			email = $("#email").val();
-			
-			if ( $("#one-time").prop( "checked" ) ){
-				dType = "One-Time";
-			}
-			if ( $("#monthly").prop( "checked" ) ){
-				dType = "Monthly";
-			}
+				
+                <div class="row mt-3">
+                 </div>
+                <div class="mt-5 text-center"><button class="btn btn-primary profile-button" onclick="window.location.href='';">Next &raquo;</div>
+               
+               </div>
+        </div>
+        <div class="col-md-4">
+            <div class="p-3 py-5">
+                <div class="d-flex justify-content-between align-items-center experience"></span>
+				<br><span class="border px-3 p-1 add-experience"><i class="fa fa-plus"></i>&nbsp;Donate More</span></div><br>
 
-		});
-        </script>
+                <div class="col-md-12"><label class="labels">Transaction</label><br><hr>
+    <small>         1/23/23/ - Donate to Kidney Center <br>
+                    1/25/23/ - Donate to Phil Eagle <br>
+                    1/25/23/ - Donate to Gulf Saver <br>
+                    1/25/23/ - Donate to Childrens Foundation <br>
+                    1/25/23/ - Bantay Bata<br>
+</small>
+<hr>
+            </div>
+            </div>
+        </div>
+
+
+      <div class="container-fluid"><hr></div></div>
+                <!-- /.container-fluid -->
+            <!-- End of Main Content -->
+<?php // include ("footer.php"); ?>
+
+            <!-- Footer -->
+            <footer class="sticky-footer bg-white">
+                <div class="container my-auto">
+                    <div class="copyright text-center my-auto">
+                        <span><font class="footer-text">Copyright &copy; CrowdFunding Box Capstone Project by Virgel  &bull; Ernan  &bull; Lu Cab</span>
+                    </div>
+                </div>
+            </footer>
+            <!-- End of Footer -->
+
+        </div>
+        <!-- End of Content Wrapper -->
+
+    </div>
+    <!-- End of Page Wrapper -->
+
+    <!-- Scroll to Top Button-->
+    <a class="scroll-to-top rounded" href="#page-top">
+        <i class="fas fa-angle-up"></i>
+    </a>
+
+
+    <?php // include ("modals.php") ?>
+     <!-- Logout Modal-->
+     <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Ready to Leave?</h5>
+                    <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">×</span>
+                    </button>
+                </div>
+                <div class="modal-body">Select "Logout" below if you are ready to end your current session.</div>
+                <div class="modal-footer">
+                    <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
+                    <a class="btn btn-primary" href="/logout">Logout</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+   <!-- Modal Cash In -->
+   <div class="modal fade" id="cash-in" tabindex="-1" role="dialog" aria-labelledby="cash-in"
+        aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                <div class="text-xs font-weight-bold text-info text-uppercase mb-1">YOU ARE ABOUT TO CASH IN </div>
+                    <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">×</span>
+                    </button>
+                </div>
+                 <div class="modal-body">
+                 <form class="image-upload" method="post" action="" enctype="multipart/form-data">
+                        @csrf
+            			<div class="paymentWrap">
+							<div class="btn-group paymentBtnGroup btn-group-justified" data-toggle="buttons">
+					            <label class="btn paymentMethod active">
+					            	<div class="method gcash"></div>
+                                    <input type="hidden" name="uid" value="1">
+					                <input type="radio" id="gcash" name="method " checked> 
+					            </label>
+					            <label class="btn paymentMethod">
+					            	<div class="method paymaya"></div>
+					                <input type="radio" id="paymaya" name="method"> 
+					            </label>
+					            <label class="btn paymentMethod">
+				            		<div class="method bdo"></div>
+					                <input type="radio" id="bdo" name="method">
+					            </label>
+					             <label class="btn paymentMethod">
+				             		<div class="method palawan"></div>
+					                <input type="radio" id="palawan" name="method"> 
+					            </label>
+					       
+						</div>
+						
+					<div><div>
+                    <div class="modal-footer">
+                    <div class="input-group mb-3">
+  <span class="input-group-text">Enter Amount &#8369;</span>
+  <input type="text" maxlength="6" name="amount" class="form-control" aria-label="Amount (to the nearest Peso)">
+  <span class="input-group-text"><sup>.00</sup></span>
+</div>
+Transaction ID
+<input type="text" class="form-control form-control-user" id="transaction"
+                                            placeholder="">
+
+Upload Reference
+<div class="input-group mb-3">
+
+<input type="text" class="form-control form-control-user" id="transaction"
+                                            placeholder="">
+
+
+</div></div>
+
+<div class="modal-footer">
+                    <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
+                    <a class="btn btn-primary" href="#">Cash In</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
     <!-- Bootstrap core JavaScript-->
     <script src="vendor/jquery/jquery.min.js"></script>
     <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
@@ -495,3 +537,15 @@ The Clear and Simple Answer <p></h1>
 
     <!-- Custom scripts for all pages-->
     <script src="js/sb-admin-2.min.js"></script>
+
+    <!-- Page level plugins -->
+    <script src="vendor/chart.js/Chart.min.js"></script>
+
+    
+
+</body>
+
+</html>
+
+
+@endsection

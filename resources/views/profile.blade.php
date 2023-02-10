@@ -79,15 +79,21 @@
 <!-- Heading -->
 
     
-   <div class="sidebar-heading">
-    ADMIN MENU
+       
+<div class="sidebar-heading">
+    USER MENU
     </div>
                 <li class="nav-item">
-                <a class="nav-link" href="">
+                <a class="nav-link" href="/profile">
                     <i class="fas fa-fw fa-chart-area"></i>
-                    <span>Add Organization</span></a>
-            </li> 
-           
+                    <span>My Profile</span></a>
+                 </li> 
+                 <li class="nav-item">
+                <a class="nav-link" href="/edit-user/{{auth()->user()->id}}">
+                    <i class="fas fa-fw fa-chart-area"></i>
+                    <span>Edit Data</span></a>
+                 </li> 
+            
 
             <!-- Divider -->
             <hr class="sidebar-divider">
@@ -389,23 +395,20 @@
         <div class="col-md-4">
             <div class="p-3 py-5">
                 <div class="d-flex justify-content-between align-items-center experience"><span>Donations you've made</span><span class="border px-3 p-1 add-experience"><i class="fa fa-plus"></i>&nbsp;Donate More</span></div><br>
-                <div class="col-md-12"><label class="labels">History</label><br>
-                <small>
-                    &bull; October 20,2023  - 100.00 - FDC2234 - Malasakit Center<br> 
-                    &bull; October 20,2023  - 500.00 - FDC2234 - Habitat Foundation<br> 
-                    &bull; October 20,2023  -  10.00 - FDC2234         <br> 
-
-                    </small></div> <br>
+                
                 <div class="col-md-12"><label class="labels">Transaction</label><br>
+                <hr>
     <small>         1/23/23/ - Donate to Kidney Center <br>
                     1/25/23/ - Donate to Phil Eagle <br>
                     1/25/23/ - Donate to Gulf Saver <br>
                     1/25/23/ - Donate to Childrens Foundation <br>
-                    1/25/23/ - Bantay Bata<br>
+                    1/25/23/ - {{ auth()->user()->mobile }}<br>
 </small>
+<hr>
             </div>
             </div>
         </div>
+
 
 
       <div class="container-fluid"><hr></div></div>
@@ -416,10 +419,8 @@
             <!-- Footer -->
             <footer class="sticky-footer bg-white">
                 <div class="container my-auto">
-                    <div class="copyright text-center my-auto">
-                        <span><font class="footer-text">Copyright &copy; CrowdFunding Box Capstone Project by Virgel  &bull; Ernan  &bull; Lu Cab</span>
-                    </div>
-                </div>
+                @include('partials/footer');    
+            </div>
             </footer>
             <!-- End of Footer -->
 

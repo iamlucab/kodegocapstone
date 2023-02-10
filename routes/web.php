@@ -85,6 +85,5 @@ Route::get('/admin/dashboard',function(){
 })->middleware('auth:admin');
 
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
 

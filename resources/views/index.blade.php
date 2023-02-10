@@ -172,7 +172,7 @@ p .text-desc {
             <li class="nav-item active">
                 <a class="nav-link" href="/dashboard">
                     <i class="fas fa-fw fa-tachometer-alt"></i>
-                    <span>Dashboard</span></a>
+                    <span>ADMIN DASHBOARD</span></a>
                 
             </li>
     
@@ -183,12 +183,17 @@ p .text-desc {
 
     
    <div class="sidebar-heading">
-    ADMIN MENU
+    ADMIN MENU HERE
     </div>
                 <li class="nav-item">
-                <a class="nav-link" href="">
+                <a class="nav-link" href="/organization">
                     <i class="fas fa-fw fa-chart-area"></i>
-                    <span>Add Organization</span></a>
+                    <span>View Organization List</span></a>
+            </li> 
+            <li class="nav-item">
+                <a class="nav-link" href="/organization">
+                <i class="fa fa-spinner" aria-hidden="true"></i>
+                    <span>User's List</span></a>
             </li> 
            
 
@@ -206,7 +211,7 @@ p .text-desc {
             <li class="nav-item">
                 <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo"
                     aria-expanded="true" aria-controls="collapseTwo">
-                    <i class="fas fa-fw fa-cog"></i>
+                    <i class="fa fa-cog fa-spin" style="font-size:15px"></i>
                     <span>Other Payment</span>
                 </a>
                 <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
@@ -597,8 +602,10 @@ p .text-desc {
 <div class="container-fluid">
     
     <hr>
-<p class="text-xs font-weight-bold text-info text-uppercase mb-6" >Top Featured Foundations</p>
- 
+<p class="text-xs font-weight-bold text-info text-uppercase mb-6" >Top Featured Foundations </p> <button onclick="window.location.href='/organization/create';" type="button" class="btn btn-info">Add Organization</button>
+<p id="demo"></p>
+
+
 		<div class="MultiCarousel" data-items="1,3,5,6" data-slide="1" id="MultiCarousel"  data-interval="1000">
             <div class="MultiCarousel-inner">
                
@@ -613,9 +620,10 @@ p .text-desc {
   <div class="card-body">
   <a href="{{ route('organization.edit', $row->id) }}"><p class="text-xs font-weight-bold text-info text-uppercase mb-2" >{{ $row->org_address }}</p></a>
   </div>
+ 
 </div>
 
-                </div>
+</div>
                 
 
               
@@ -625,13 +633,7 @@ p .text-desc {
 <div class="item">
 <center><p class="card-text">Data Not Found</p></center>
 </div>
-@endif
-
-
-				
-				
-				
-				</div>
+@endif	</div>
 
                 
             <button class="btn btn-primary leftLst"><</button>
@@ -648,9 +650,8 @@ p .text-desc {
             <!-- Footer -->
             <footer class="sticky-footer bg-white">
                 <div class="container my-auto">
-                    <div class="copyright text-center my-auto">
-                        <span><font class="footer-text">Copyright &copy; CrowdFunding Box Capstone Project by Virgel  &bull; Ernan  &bull; Lu Cab</span>
-                    </div>
+            @include ('partials/footer');
+
                 </div>
             </footer>
             <!-- End of Footer -->

@@ -172,13 +172,19 @@
 
     
    <div class="sidebar-heading">
-    ADMIN MENU
+    USER MENU
     </div>
                 <li class="nav-item">
-                <a class="nav-link" href="/organization">
+                <a class="nav-link" href="/profile">
                     <i class="fas fa-fw fa-chart-area"></i>
-                    <span>Organization List</span></a>
-            </li> 
+                    <span>My Profile</span></a>
+                 </li> 
+                 <li class="nav-item">
+                <a class="nav-link" href="/edit-user/{{auth()->user()->id}}">
+                    <i class="fas fa-fw fa-chart-area"></i>
+                    <span>Edit Data</span></a>
+                 </li> 
+            
            
 
             <!-- Divider -->
@@ -533,7 +539,7 @@
                                 <div class="card-body">
                                     <div class="row no-gutters align-items-center">
                                         <div class="col mr-2">
-                                        <a  href="#" data-toggle="modal" data-target="#cash-in" class="stretched-link"></a>
+                                        <a  href="/donate" class="stretched-link"></a>
                                             <div class="text-xs font-weight-bold text-info text-uppercase mb-1">Donate
                                             </div>
                                             <div class="row no-gutters align-items-center">
@@ -593,7 +599,7 @@
                 <div class="item">
                     <div class="pad15">
                     <p class="text-xs font-weight-bold text-info text-uppercase mb-2"> Save the Children Foundation</p>
-                    <a href="#" data-toggle="modal" data-target="#cash-in"><img class="img-foundation" src="img/children.jpg"></a>
+                    <a href="/donate"><img class="img-foundation" src="img/children.jpg"></a>
                        
                     </div>
                 </div>
@@ -671,7 +677,10 @@
             <footer class="sticky-footer bg-white">
                 <div class="container my-auto">
                     <div class="copyright text-center my-auto">
-                        <span><font class="footer-text">Copyright &copy; CrowdFunding Box Capstone Project by Virgel  &bull; Ernan  &bull; Lu Cab</span>
+
+                @include ('partials/footer');
+
+
                     </div>
                 </div>
             </footer>
