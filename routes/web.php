@@ -87,3 +87,21 @@ Route::get('/admin/dashboard',function(){
 
 
 
+// FROM VIRGEL //
+
+Route::get ('/howitswork', function (){
+    return view('howitswork');
+});
+
+Route::get ('/medical', function (){
+    return view('medical');
+});
+
+Route::get ('/emergency', function (){
+    return view('emergency');
+});
+
+Route::get ('/education', function (){
+    return view('education');
+});
+

@@ -1,0 +1,30 @@
+#how{
+    font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+    font-weight: bolder;
+    font-size: 1.875rem;
+    color:darkgreen;
+    text-align: center;
+    margin-top: 80px;
+}
+
+#sub-how{
+    font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+    font-size: 1rem;
+    color:gray;
+    text-align: center;
+    margin-top: 0;
+
+}
+#col-iframe-video{
+    display: flex;
+    justify-content: center;
+}
+
+#iframe-video{
+    border-radius: 10px;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    -ms-border-radius: 10px;
+    -o-border-radius: 10px;
+  /*  box-shadow: 0px 1px 10px 1px green; */
+}

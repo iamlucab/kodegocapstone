@@ -1,0 +1,140 @@
+#get{
+    font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+    font-weight: bolder;
+    font-size: 2rem;
+    color:darkgreen;
+    text-align: left;
+    margin-top: 50px;
+    padding-right: 10px;
+}
+
+#sub-get{
+    font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+    font-size: 1.4rem;
+    color:gray;
+    text-align: left;
+    margin-top: 0;
+    padding-right: 15px;
+}
+
+#a-friend {
+    font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+    font-size: 1rem;
+    color:rgb(153, 153, 153);
+    text-align: left;
+    margin-top: 0;
+    padding-right: 15px;
+    margin-top: 150px;
+}
+.main-medical-img {
+    margin-top: 50px;
+    width: 550px;
+    height: 350px;
+    object-fit: fill;
+    
+}
+
+#center-button-medical{
+    font-weight: bold;
+}
+
+#Were {
+    margin-top: 80px;
+    color: darkgreen;
+    text-align: center;
+    font-size: 1.8rem;
+
+}
+
+#middle-line{
+    margin-top: 50px;
+    margin-bottom: 80px;
+    border-left: 1px lightgray solid;
+    border-right: 1px lightgray solid;;
+}
+
+.amount {
+    margin-top: 50px;
+    text-align: center;
+    font-size: 1.4em;
+    margin-bottom: 0;
+}
+
+.amount-content {
+    margin-bottom: 50px;
+    text-align: center;
+    font-size: 1em;
+    
+}
+
+#test-image {
+    width: 100%;
+}
+#col-for-car {
+    margin-top: 50px;
+
+}
+
+#title-stories {
+    margin-top: 40px;
+    margin-bottom: 50px;
+    color: darkgreen;
+    text-align: center;
+    font-size: 1.8rem;  
+}
+
+.title-slide {
+    font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+    color: yellowgreen;
+    text-shadow: 1px 1px darkgreen;
+ 
+}
+
+.content-slide{
+    font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+    color: black;
+    background-color: lightgray;
+    border-radius: 10px;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    -ms-border-radius: 10px;
+    -o-border-radius: 10px;
+    opacity: 80%;
+    
+}
+
+#con-slide {
+    padding: 0 0 0 0;
+}
+
+#ready {
+    margin-top: 40px;
+    margin-bottom: 50px;
+    color: darkgreen;
+    text-align: center;
+    font-size: 1.5rem;
+}
+
+#center-button-medical-ready-bottom {
+    margin: 0;
+    position: relative;
+    top: 50%;
+    left: 50%;
+    padding: 10px;
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    font-weight: bold;
+}
+
+.visually {
+    color:red;
+    font-size: 30px;
+    font-weight: bolder;
+    background-color: white;
+    padding: 15px;
+    border-radius: 50%;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    -ms-border-radius: 50%;
+    -o-border-radius: 50%;
+}

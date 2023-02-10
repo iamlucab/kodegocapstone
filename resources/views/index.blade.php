@@ -613,7 +613,9 @@ p .text-desc {
 				@foreach($data as $row)
 
 					<div class="item">
-					<div><p class="text-xs font-weight-bold text-success text-uppercase mb-2" >{{ $row->org_name }}</p></div>
+					<div>
+            
+            <p class="text-xs font-weight-bold text-success text-uppercase mb-2" >{{ $row->org_name }}</p></div>
 					<div id="carouselExampleDark" class="carousel carousel-dark slide" data-bs-ride="carousel">
 
   <img src="{{ asset('images/'. $row->org_photo) }}"  class="img-foundation" alt="CrowdFundbox">

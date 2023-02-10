@@ -182,7 +182,7 @@
                  <li class="nav-item">
                 <a class="nav-link" href="/edit-user/{{auth()->user()->id}}">
                     <i class="fas fa-fw fa-chart-area"></i>
-                    <span>Edit Data</span></a>
+                    <span>Edit Profile</span></a>
                  </li> 
             
            
@@ -202,13 +202,13 @@
                 <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo"
                     aria-expanded="true" aria-controls="collapseTwo">
                     <i class="fas fa-fw fa-cog"></i>
-                    <span>Other Payment</span>
+                    <span>Success Stories</span>
                 </a>
                 <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
                         <h6 class="collapse-header">Categories</h6>
-                        <a class="collapse-item" href="#">How it Works</a>
-                        <a class="collapse-item" href="#">See all Campaigns</a>
+                        <a class="collapse-item" href="#">Supported Organization</a>
+                        <a class="collapse-item" href="#">Common Questions</a>
               
                     </div>
                 </div>
@@ -224,11 +224,10 @@
                     data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
                         <h6 class="collapse-header">Main</h6>
-                        <a class="collapse-item" href="">Register</a>
-                        <a class="collapse-item" href="">Login</a>
+                        <a class="collapse-item" href="">Reports</a>
+                        <a class="collapse-item" href="">Other Link</a>
                         <a class="collapse-item" href="">Forget Password</a>
                         <a class="collapse-item" href="">Other</a>
-                        <a class="collapse-item" href="">Chart</a>
                     </div>
                 </div>
             </li>
@@ -483,8 +482,35 @@
                                 </div>
                                 <!-- Card Body -->
                                 <div class="card-body">
-                               <span class="h5 mb-0 font-weight-bold text-gray-800"> &#8369; 100,000</span><sup>.00</sup>
+             <?php
+$servername = "localhost";
+$username = "root";
+$password = "Coders123";
+$dbname = "caps";
+$conn = mysqli_connect($servername, $username, $password, $dbname);
+if (!$conn) {
+  die("Connection failed: " . mysqli_connect_error());
+}
+
+$sql = "SELECT *  FROM wallet";
+$result = mysqli_query($conn, $sql);
+
+if (mysqli_num_rows($result) > 0) {
+  while($row = mysqli_fetch_assoc($result)) {
+
+                  echo "<span class=\"h5 mb-0 font-weight-bold text-gray-800\"> &#8369; " . number_format($row["cashwallet"])."</span><sup>.00</sup><br>";
+                }
+
+?>                 
                                 </div>
+                                <?PHP               } else {
+                echo "0 results";
+              }
+              
+              mysqli_close($conn);
+              ?>
+
+
                             
                         <a href="/profile" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"><i
                                 class="fas fa-download fa-sm text-white-50"></i> Generate Donation History</a>

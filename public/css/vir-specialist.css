@@ -1,0 +1,28 @@
+.card-title {
+    font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+    text-align: center;
+    font-size: 1.2rem;
+    font-weight: bolder;
+    color: darkgreen;
+}
+
+#meet{
+    margin-top: 100px;
+    color: darkgreen;
+    text-align: center;
+    font-size: 1.8rem;
+    margin-bottom: 40px;
+}
+#img-specialist {
+
+}
+
+.card {
+    margin: 0 auto; 
+}
+
+.card-text {
+    font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+    font-style: italic;
+    color: gray;
+}

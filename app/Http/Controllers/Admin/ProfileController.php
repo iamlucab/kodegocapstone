@@ -21,6 +21,6 @@ class ProfileController extends Controller
             'updated_at' => now()
         ]);
 
-        return $this->success('profile','Profile updated successfully!');
+        return $this->success('profile','Profile Updated Successfully!');
     }
 }

@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CrowdFundBox- a fund raising platform..</title>
+    <title>CROWDFundingBOX #1 fundraising Platform..</title>
     <link rel="stylesheet" type="text/css" href="{{asset('css/vir-index.css')}}">
 </head>
 @extends('layouts.frontend')
@@ -33,7 +33,7 @@
     <div class="container">
         <div class="row">
             <div class="col-md-4">
-                    <div class="card" id="img-card1"><a href="/registration">
+                    <div class="card" id="img-card1"><a href="registration">
                     <img src="{{URL('images/donate.png')}}" class="card-img-top" id="img-do-in-teer1" alt="..."></a>
                     <div class="card-body">
                     <h5 class="card-title">Support CrowdFundingBox</h5>
@@ -41,7 +41,7 @@
                     </div>
             </div>
             <div class="col-md-4">
-                    <div class="card" id="img-card2"><a href="/registration">
+                    <div class="card" id="img-card2"><a href="registration">
                     <img src="{{URL('images/involved.png')}}" class="card-img-top" id="img-do-in-teer2"  alt="..."> </a>
                     <div class="card-body">
                     <h5 class="card-title">Start Changing Lives</h5>
@@ -49,7 +49,7 @@
                     </div>
             </div>
             <div class="col-md-4">
-                    <div class="card" id="img-card3"><a href="/registration">
+                    <div class="card" id="img-card3"><a href="registration">
                     <img src="{{URL('images/volunteer.png')}}" class="card-img-top" id="img-do-in-teer3" alt="..."></a>
                     <div class="card-body">
                     <h5 class="card-title" id="card-title1" >Volunteer</h5>
@@ -69,6 +69,7 @@
             </div>
         </div>
     </div>
+
 
 </body>
 </html>
