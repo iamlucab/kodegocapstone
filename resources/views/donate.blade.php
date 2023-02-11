@@ -80,14 +80,19 @@
 
     
    <div class="sidebar-heading">
-    ADMIN MENU
+    USER MENU
     </div>
                 <li class="nav-item">
-                <a class="nav-link" href="">
+                <a class="nav-link" href="/profile">
                     <i class="fas fa-fw fa-chart-area"></i>
-                    <span>Add Organization</span></a>
-            </li> 
-           
+                    <span>My Profile</span></a>
+                 </li> 
+                 <li class="nav-item">
+                <a class="nav-link" href="/edit-user/{{auth()->user()->id}}">
+                    <i class="fas fa-fw fa-chart-area"></i>
+                    <span>Edit Profile</span></a>
+                 </li> 
+            
 
             <!-- Divider -->
             <hr class="sidebar-divider">

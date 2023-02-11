@@ -80,14 +80,19 @@
 
     
    <div class="sidebar-heading">
-    ADMIN MENU
+   USER MENU
     </div>
                 <li class="nav-item">
-                <a class="nav-link" href="">
+                <a class="nav-link" href="/profile">
                     <i class="fas fa-fw fa-chart-area"></i>
-                    <span>Add Organization</span></a>
-            </li> 
-           
+                    <span>My Profile</span></a>
+                 </li> 
+                 <li class="nav-item">
+                <a class="nav-link" href="/edit-user/{{auth()->user()->id}}">
+                    <i class="fas fa-fw fa-chart-area"></i>
+                    <span>Edit Profile</span></a>
+                 </li> 
+            
 
             <!-- Divider -->
             <hr class="sidebar-divider">
@@ -222,12 +227,7 @@
         <div class="col-md-4">
             <div class="p-3 py-5">
                 <div class="d-flex justify-content-between align-items-center experience"><span>Donations you've made</span><span class="border px-3 p-1 add-experience"><i class="fa fa-plus"></i>&nbsp;Donate More</span></div><br>
-                <div class="col-md-12"><label class="labels">History</label><br>
-                <small>
-                    &bull; October 20,2023  - 100.00 - FDC2234 - Malasakit Center<br> 
-                    &bull; October 20,2023  - 500.00 - FDC2234 - Habitat Foundation<br> 
-                    &bull; October 20,2023  -  10.00 - FDC2234         <br> 
-</small></div> <br>
+
                 <div class="col-md-12"><label class="labels">Transaction</label><br>
     <small>         1/23/23/ - Donate to Kidney Center <br>
                     1/25/23/ - Donate to Phil Eagle <br>
@@ -353,23 +353,15 @@ Upload Reference
     </div>
 
     <!-- Bootstrap core JavaScript-->
-    <script src="vendor/jquery/jquery.min.js"></script>
-    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="{{ asset('vendor/jquery/jquery.min.js') }}"></script>
+    <script src="{{ asset('vendor/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
 
     <!-- Core plugin JavaScript-->
-    <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
+    <script src="{{ asset('vendor/jquery-easing/jquery.easing.min.js') }}"></script>
 
     <!-- Custom scripts for all pages-->
-    <script src="js/sb-admin-2.min.js"></script>
-
-    <!-- Page level plugins -->
-    <script src="vendor/chart.js/Chart.min.js"></script>
-
-    <!-- Page level custom scripts -->
-    <script src="js/demo/chart-area-demo.js"></script>
-    <script src="js/demo/chart-pie-demo.js"></script>
-
-
+    <script src="{{ asset('/js/sb-admin-2.min.js')}}"></script>
+    
     
 
 <script>
